@@ -1,22 +1,17 @@
-import { ProductsComponent } from './../catalogue/products/products.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CatalogueComponent } from './../catalogue/catalogue.component';
-import { MainComponent } from './main.component';
+import { CatalogueComponent } from "./catalogue.component";
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: MainComponent,
+    path: 'catalogue/:id',
+    component: CatalogueComponent,
     children: [
       {
         path: '',
-        component: CatalogueComponent,
-      },
-      {
-        path: 'products/:id',
         component: ProductsComponent
       }
     ]
@@ -31,4 +26,4 @@ const routes: Routes = [
   declarations: [],
   exports: [RouterModule]
 })
-export class MainRoutingModule { }
+export class CatalogueRoutingModule { }
