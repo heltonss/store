@@ -21,7 +21,6 @@ import { MainRoutingModule } from './main-routing.module';
     MainComponent,
     HeaderComponent,
     NavigateComponent,
-    CatalogueComponent
   ]
 })
 export class MainModule { }

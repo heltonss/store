@@ -17,7 +17,7 @@ describe('AppComponent', () => {
         AppRoutingModule,
         MainModule
       ],
-        providers: [{provide: APP_BASE_HREF, useValue : '/' }]
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
 
     }).compileComponents();
   }));

@@ -14,10 +14,6 @@ const routes: Routes = [
       {
         path: '',
         component: CatalogueComponent,
-      },
-      {
-        path: 'products/:id',
-        component: ProductsComponent
       }
     ]
   }

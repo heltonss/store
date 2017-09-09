@@ -1,3 +1,8 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ProductsComponent } from './../../catalogue/products/products.component';
+import { CatalogueComponent } from './../../catalogue/catalogue.component';
+import { MainComponent } from './../main.component';
+import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavigateComponent } from './navigate.component';
@@ -8,9 +13,10 @@ describe('NavigateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigateComponent ]
+     schemas: [ NO_ERRORS_SCHEMA ],
+      declarations: [NavigateComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
