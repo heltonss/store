@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { MainModule } from './main/main.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     AppRoutingModule,
     MainModule,
-    MaterializeModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

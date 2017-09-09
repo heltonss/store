@@ -1,6 +1,16 @@
-<nav class="col  m3 l3 xl2 transparent navigate">
-  <ul>
-    <li><a >Celulares</a></li>
-    <li><a >Tv's</a></li>
-  </ul>
-</nav>
+<ul id="slide-out" class="side-nav fixed">
+  <li>
+    <div class="user-view">
+      <div class="background">
+        <img class="navigate-background" src="assets/imgs/background.jpg">
+      </div>
+      <a href="#!user"><img class="circle" src="assets/imgs/user.jpg"></a>
+      <a href="#!name"><span class="name white-text">Paty</span></a>
+      <a href="#!email"><span class="email white-text">paty@hotmail.com</span></a>
+    </div>
+  </li>
+  <li><a href="#!"><i class="material-icons">exit_to_app</i>logout</a></li>
+  <li><a (click)="closeSideNav()" class="waves-effect navigate-btn" href="#!">Celulares</a></li>
+  <li><a class="waves-effect navigate-btn" href="#!">Tv's</a></li>
+</ul>
+<a href="#" materialize="sideNav" data-activates="slide-out" class="button-collapse hide-on-med-and-up"><i class="material-icons medium">menu</i></a>

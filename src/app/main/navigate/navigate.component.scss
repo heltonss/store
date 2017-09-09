@@ -1,4 +1,16 @@
-.navigate{
-    border: none;
-    box-shadow: none; 
+$blur: 2px;
+
+.navigate {
+  border: none;
+  box-shadow: none;
+  &-background {
+    -webkit-filter: blur($blur);
+    -moz-filter: blur($blur);
+    -o-filter: blur($blur);
+    -ms-filter: blur($blur);
+    filter: blur($blur);
+  }
+  &-btn{
+      border-bottom: solid 1px rgba(000, 000,000, 0.1);
+  }
 }

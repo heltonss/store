@@ -1,9 +1,6 @@
-.header{
-    height: 30vh;
-    padding: 3% 0 0 0;
-    &-search{
-        &-input{
-        padding: 0 0 0 5% !important;
-        }
-    }
+.header {
+  height: 30vh;
+  &-logotype{
+      margin: 3% 0 0 0;
+  }
 }
