@@ -1,4 +1,3 @@
-import { ProductsComponent } from './../catalogue/products/products.component';
 import { RouterModule } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -9,6 +8,7 @@ import { NavigateComponent } from './navigate/navigate.component';
 import { CatalogueComponent } from './../catalogue/catalogue.component';
 import { MainRoutingModule } from './main-routing.module';
 import { CatalogueModule } from './../catalogue/catalogue.module';
+import { ProductsComponent } from './../catalogue/products/products.component';
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -24,24 +24,8 @@ describe('MainComponent', () => {
       imports: [
         CatalogueModule,
         MainRoutingModule,
-        RouterTestingModule.withRoutes([
-          {
-            path: '',
-            component: MainComponent,
-            children: [
-              {
-                path: '',
-                component: CatalogueComponent,
-              },
-              {
-                path: 'products/:id',
-                component: ProductsComponent
-              }
-            ]
-          }
-        ])
-      ],
-      providers: [RouterModule]
+        RouterTestingModule
+      ]
     })
       .compileComponents();
   }));

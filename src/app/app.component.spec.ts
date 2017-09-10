@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { APP_BASE_HREF } from '@angular/common/src/location/location_strategy';
 import { MainComponent } from './main/main.component';
 import { RouterModule } from '@angular/router';
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
       ],
       imports: [
         AppRoutingModule,
-        MainModule
+        MainModule,
+        RouterTestingModule
       ],
       providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
 
