@@ -8,6 +8,7 @@ import { NavigateComponent } from './navigate/navigate.component';
 import { SharedModule } from './../shared/shared.module';
 import { MainRoutingModule } from './main-routing.module';
 import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { ProductsComponent } from './products/products.component';
     HeaderComponent,
     NavigateComponent,
     ProductsComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ProductComponent
   ]
 })
 export class MainModule { }

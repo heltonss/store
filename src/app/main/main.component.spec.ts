@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigateComponent } from './navigate/navigate.component';
 import { MainRoutingModule } from './main-routing.module';
 import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './product/product.component';
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -21,7 +22,8 @@ describe('MainComponent', () => {
         NavigateComponent,
         ProductsComponent,
         ShoppingCartComponent,
-        ProductsComponent
+        ProductsComponent,
+        ProductComponent
       ],
       imports: [
         MainRoutingModule,

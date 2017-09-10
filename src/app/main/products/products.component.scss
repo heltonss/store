@@ -1,28 +1,32 @@
 $width: 30%;
 $height: 30%;
 .products {
-  &-image {
-    width: $width !important;
-    height: $height !important;
-  }
-  &-title {
-    background: rgba(333, 333, 333, 0.5);
-  }
-  &-cart {
-    padding: 1% 0;
-  }
+    &-image {
+        width: $width !important;
+        height: $height !important;
+    }
+    &-title {
+        background: rgba(333, 333, 333, 0.5);
+    }
+    &-cart {
+        padding: 1% 0;
+    }
+}
+
+.view-product {
+    cursor: pointer;
 }
 
 //override bootstrap
 span.badge {
-  min-width: 3rem;
-  padding: 0;
-  margin:4px 0 0 6px;
-  text-align: center;
-  font-size: 1rem;
-  line-height: 25px;
-  height: 25px;
-  color: #fff;
-  float: right;
-  box-sizing: border-box;
+    min-width: 3rem;
+    padding: 0;
+    margin: 4px 0 0 6px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 25px;
+    height: 25px;
+    color: #fff;
+    float: right;
+    box-sizing: border-box;
 }

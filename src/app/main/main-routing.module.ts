@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MainComponent } from './main.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
@@ -13,11 +14,15 @@ const routes: Routes = [
     children: [
       {
         path: '',
-       component: ProductsComponent
+        component: ProductsComponent
       },
       {
         path: 'shopping-cart',
-       component: ShoppingCartComponent
+        component: ShoppingCartComponent
+      },
+      {
+        path: 'product',
+        component: ProductComponent
       }
     ]
   }
