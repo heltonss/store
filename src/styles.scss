@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+header,
+main,
+footer {
+  padding-left: 300px;
+}
+
+.header {
+  &-search {
+    &-input {
+      padding: 0 0 0 5% !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  footer {
+    padding-left: 0;
+  }
+  .header {
+    &-logotype {
+      margin-top: 0 !important;
+    }
+    &-search {
+      &-input {
+        padding: 0 0 0 10% !important;
+      }
+    }
+  }
+}
