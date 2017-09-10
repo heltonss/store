@@ -9,6 +9,7 @@ import { NavigateComponent } from './navigate/navigate.component';
 import { MainRoutingModule } from './main-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
+import { CartButtonComponent } from './cart-button/cart-button.component';
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -23,7 +24,8 @@ describe('MainComponent', () => {
         ProductsComponent,
         ShoppingCartComponent,
         ProductsComponent,
-        ProductComponent
+        ProductComponent,
+        CartButtonComponent
       ],
       imports: [
         MainRoutingModule,

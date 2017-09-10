@@ -9,6 +9,7 @@ import { SharedModule } from './../shared/shared.module';
 import { MainRoutingModule } from './main-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
+import { CartButtonComponent } from './cart-button/cart-button.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { ProductComponent } from './product/product.component';
     NavigateComponent,
     ProductsComponent,
     ShoppingCartComponent,
-    ProductComponent
+    ProductComponent,
+    CartButtonComponent
   ]
 })
 export class MainModule { }

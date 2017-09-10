@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductsComponent } from './products.component';
+import { CartButtonComponent } from './../cart-button/cart-button.component';
 import { By } from "@angular/platform-browser";
 
 describe('ProductsComponent', () => {
@@ -14,7 +15,10 @@ describe('ProductsComponent', () => {
       imports:[
         RouterTestingModule
       ],
-      declarations: [ProductsComponent],
+      declarations: [
+        ProductsComponent,
+        CartButtonComponent
+      ],
     })
       .compileComponents();
   }));

@@ -1,0 +1,13 @@
+//override bootstrap
+span.badge {
+    min-width: 3rem;
+    padding: 0;
+    margin: 4px 0 0 6px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 25px;
+    height: 25px;
+    color: #fff;
+    float: right;
+    box-sizing: border-box;
+}
