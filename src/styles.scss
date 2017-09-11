@@ -44,3 +44,16 @@ footer {
         }
     }
 }
+
+//override materializecss
+.carousel {
+    height: 445px !important;
+}
+
+.carousel .indicators .indicator-item {
+    background-color: #43a047 !important;
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: yellow !important;
+}

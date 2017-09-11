@@ -1,28 +1,14 @@
-<app-cart-button></app-cart-button>
-
+<app-cart-button [countProduct]="qtdProductsCart"></app-cart-button>
 <div class="col s12 m6 l6 xl6">
-    <div materialize="carousel" class="carousel carousel-slider center" data-indicators="true">
-        <div class="carousel-item red white-text">
-            <h2>First Panel</h2>
-            <p class="white-text">This is your first panel</p>
-        </div>
-        <div class="carousel-item amber white-text">
-            <h2>Second Panel</h2>
-            <p class="white-text">This is your second panel</p>
-        </div>
-        <div class="carousel-item green white-text" h>
-            <h2>Third Panel</h2>
-            <p class="white-text">This is your third panel</p>
-        </div>
-        <div class="carousel-item blue white-text">
-            <h2>Fourth Panel</h2>
-            <p class="white-text">This is your fourth panel</p>
+    <div materialize="carousel" class="carousel carousel-slider" data-indicators="true">
+        <div *ngFor="let image of objectKeys(product.photos)" class="carousel-item white-text">
+            <img onError="this.src='assets/products/default-placeholder.png';" src="assets/products/{{ product.photos[image]}}" alt="fotos do smartphone {{ product.name }}">
         </div>
     </div>
 </div>
 <div class="col s12 m6 l6 xl6">
-    <h1 class="product-panel-title">Nome do produto</h1>
-    <div class="col s12 m12 l12 xl12 product-panel-price">R$ 1000,00</div>
-    <p class="col s12 m12 l12 xl12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus perspiciatis sint, dolore quia ab libero nobis, distinctio quasi obcaecati facilis consequuntur! Delectus illum minus eos totam quasi quidem consectetur veritatis.</p>
-    <a class="btn right"><i class="material-icons left">add_shopping_cart</i>Adicionar</a>
+    <h1 class="product-panel-title">{{ product.name }}</h1>
+    <div class="col s12 m12 l12 xl12 product-panel-price">{{ product.price }}</div>
+    <p class="col s12 m12 l12 xl12">{{ product.description }}</p>
+    <a (click)="addProducts()" class="btn right"><i class="material-icons left">add_shopping_cart</i>Adicionar</a>
 </div>

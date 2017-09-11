@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';
+import { DataService } from './../shared/data.service';
 import { CartButtonComponent } from './../cart-button/cart-button.component';
 
 describe('ProductComponent', () => {
@@ -12,7 +13,8 @@ describe('ProductComponent', () => {
       declarations: [ 
         ProductComponent,
         CartButtonComponent
-       ]
+       ],
+       providers: [DataService]
     })
     .compileComponents();
   }));

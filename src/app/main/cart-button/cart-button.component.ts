@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Input, Component,  OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-cart-button',
@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-button.component.scss']
 })
 export class CartButtonComponent implements OnInit {
+  @Input() countProduct: number;
 
   constructor() { }
 
   ngOnInit() {
+   
+  }
+
+  ngOnChanges(){
+  
+  }
+
+  updateCountCart(value: number){
+    this.countProduct = value;
   }
 
 }

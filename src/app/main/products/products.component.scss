@@ -6,13 +6,14 @@ $height: 30%;
         height: $height !important;
     }
     &-title {
-        background: rgba(333, 333, 333, 0.5);
+        background: rgba(333, 333, 333, 0.7);
+        font-size: 1rem
     }
     &-cart {
         padding: 1% 0;
     }
 }
 
-.view-product {
+.card-image {
     cursor: pointer;
 }
