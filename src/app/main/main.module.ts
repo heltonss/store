@@ -28,6 +28,6 @@ import { DataService } from './shared/data.service';
     ProductComponent,
     CartButtonComponent
   ],
-  providers: [ProductsService, DataService]
+  providers: [ProductsService, DataService, ShoppingCartService]
 })
 export class MainModule { }
