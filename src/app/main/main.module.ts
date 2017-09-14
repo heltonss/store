@@ -12,6 +12,7 @@ import { ProductComponent } from './product/product.component';
 import { CartButtonComponent } from './cart-button/cart-button.component';
 import { ProductsService } from './shared/products.service';
 import { DataService } from './shared/data.service';
+import { ShoppingCartService } from './shared/shopping-cart.service';
 
 @NgModule({
   imports: [

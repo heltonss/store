@@ -1,21 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ShoppingCartService {
-
+  private hostname: string = location.hostname
+  private urlendpoint: string = 'http://localhost:3000/api/shoppingcart'
+  
   constructor(private http: Http) { }
-  private urlendpoint: string ='http://localhost:3000/api/shopping-carts'
 
-  getShoppingCart(): void{
-    this.http.get(this.urlendpoint)
-    .map(this.handleData)
-    .catch(this.handleError);
+  getShoppingCart(): Observable<any> {
+    return this.http.get(this.urlendpoint)
+      .map(this.handleData)
+      .catch(this.handleError);
   }
 
-  deleteShoppingCart(id: string): void{
-    this.http.delete(`${this.urlendpoint}/${id}`)
+  deleteShoppingCart(id: string): Observable<any> {
+    return this.http.delete(`${this.urlendpoint}/${id}`)
+  }
+
+  saveProductShoppingCart(product): Promise<any> {
+    return this.http.post(this.urlendpoint, product)
+    .toPromise()
+    .then(this.handleData)
+    .catch(this.handleError);
+
   }
 
   private handleData(res: Response) {
@@ -25,7 +35,8 @@ export class ShoppingCartService {
 
   private handleError(error) {
     const errorMsg = `${error.status, error.statusText}`;
-    return errorMsg;
+    console.log('error shopping cart ' + error);
+    return error;
   }
 
 }

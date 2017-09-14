@@ -4,6 +4,7 @@ import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/cor
 import { ProductsService } from './../shared/products.service';
 import { DataService } from './../shared/data.service';
 import { Product } from "../shared/product";
+import { ShoppingCartService } from '../shared/shopping-cart.service';
 
 @Component({
   selector: 'app-products',
@@ -15,7 +16,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   private products: Product[];
   @Output() qtdProductsCart = 0;
 
-  constructor(private router: Router, private productsService: ProductsService, private dataService: DataService) { }
+  constructor(private router: Router, private productsService: ProductsService, private dataService: DataService, private shoppingCartService: ShoppingCartService) { }
 
 
   ngOnInit() {
@@ -28,12 +29,15 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.dataService.product = product;
   }
 
-  getProducts():void  {
+  getProducts(): void {
     this.productsService.getProducts().subscribe((res) => this.products = res)
   }
 
-  addProduct(): void {
+  addProductShoppingCart(product: Product): void {
     this.qtdProductsCart++
+    this.shoppingCartService.saveProductShoppingCart(product)
+      .then(() => console.log('was save with success'))
+      .catch(err => console.log('erro to the save'));
   }
 
   ngOnDestroy() {
