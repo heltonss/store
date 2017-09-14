@@ -20,12 +20,7 @@ export class CartButtonComponent implements OnInit {
   }
   
   ngOnChanges() {
-    this.getProductShoppingCart();
   }
-  
-  // updateCountCart(value: number) {
-  //   this.qtdShoppingCart = value;
-  // }
   
   getProductShoppingCart(): void {
     this.shoppingCartService.getShoppingCart().subscribe( (res) => {

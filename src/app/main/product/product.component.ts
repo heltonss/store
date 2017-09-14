@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Product } from './../shared/product';
 import { DataService } from './../shared/data.service';
+import { ShoppingCartService } from './../shared/shopping-cart.service';
 
 @Component({
   selector: 'app-product',
@@ -13,15 +14,21 @@ export class ProductComponent implements OnInit {
   private objectKeys = Object.keys
   private qtdProductsCart: number = 0;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private shoppingCartServive: ShoppingCartService) { }
 
   ngOnInit() {
     this.product = this.dataService.product;
   }
 
-  addProducts(){
+  addProductShoppingCart(product: Product): void {
     this.qtdProductsCart++
+    delete product['_id'];
+    this.shoppingCartServive.saveProductShoppingCart(product)
+      .then(() => console.log('was save with success'))
+      .catch(err => console.log('erro to the save'));
   }
 
-
+  getQtdProductsShoppingCart(): void{
+    this.shoppingCartServive.getShoppingCart().subscribe(res => this.qtdProductsCart = res.length);
+  }
 }

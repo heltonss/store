@@ -28,8 +28,13 @@ const routes: Routes = [
         path: 'product',
         component: ProductComponent
       }
-    ]
+    ],
+  },
+  {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent
   }
+
 ]
 
 @NgModule({
