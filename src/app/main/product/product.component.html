@@ -1,8 +1,9 @@
 <app-cart-button [countProduct]="qtdProductsCart"></app-cart-button>
 <div class="col s12 m6 l6 xl6">
-    <div materialize="carousel" class="carousel carousel-slider" data-indicators="true">
-        <div *ngFor="let image of objectKeys(product.photos)" class="carousel-item white-text">
-            <img onError="this.src='assets/products/default-placeholder.png';" src="assets/products/{{ product.photos[image]}}" alt="fotos do smartphone {{ product.name }}">
+    <div>
+        <img  class="col s12 m12 l12 xl12 product-main" onError="this.src='assets/products/default-placeholder.png';" src="assets/products/{{imageMain}}" alt="fotos do smartphone {{ product.name }}">        
+        <div>
+            <img *ngFor="let image of objectKeys(product.photos)"  (click)="changedImageProductMain(product.photos[image])"  class="col s4 m4 l4 xl4" onError="this.src='assets/products/default-placeholder.png';" src="assets/products/{{  product.photos[image] }}" alt="fotos do smartphone {{ product.name }}">        
         </div>
     </div>
 </div>

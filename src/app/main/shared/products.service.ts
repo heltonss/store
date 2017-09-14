@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch'
 
 @Injectable()
 export class ProductsService {
-  private url: string = 'http://localhost:3000/api/products';
+  private url: string = 'https://storebspapi.herokuapp.com/api/products';
 
   constructor(private http: Http) { }
 

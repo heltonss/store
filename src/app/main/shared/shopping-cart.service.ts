@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ShoppingCartService {
   private hostname: string = location.hostname
-  private urlendpoint: string = 'http://localhost:3000/api/shoppingcart'
+  private urlendpoint: string = 'https://storebspapi.herokuapp.com/api/shoppingcart'
   
   constructor(private http: Http) { }
 
