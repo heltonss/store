@@ -16,12 +16,26 @@ export class ProductsComponent implements OnInit, OnDestroy {
   private products: Product[];
   @Output() qtdProductsCart = 0;
 
-  constructor(private router: Router, private productsService: ProductsService, private dataService: DataService, private shoppingCartService: ShoppingCartService) { }
+  constructor(
+    private router: Router, 
+    private productsService: ProductsService, 
+    private dataService: DataService, 
+    private shoppingCartService: ShoppingCartService
+  ) { }
 
 
   ngOnInit() {
     this.getProducts();
+    this.getQtdProductsShoppingCart();
     // this.qtdProductsCart.emit(this.countProduct)
+  }
+
+  ngOnChanges(){
+    this.getQtdProductsShoppingCart();    
+  }
+
+  getQtdProductsShoppingCart(): void{
+    this.shoppingCartService.getShoppingCart().subscribe(res => this.qtdProductsCart = res.length);
   }
 
   viewProduct(product: Product): void {
@@ -35,6 +49,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   addProductShoppingCart(product: Product): void {
     this.qtdProductsCart++
+    delete product['_id'];
     this.shoppingCartService.saveProductShoppingCart(product)
       .then(() => console.log('was save with success'))
       .catch(err => console.log('erro to the save'));

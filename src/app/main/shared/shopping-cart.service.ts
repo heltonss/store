@@ -16,8 +16,11 @@ export class ShoppingCartService {
       .catch(this.handleError);
   }
 
-  deleteShoppingCart(id: string): Observable<any> {
+  deleteShoppingCart(id: string): Promise<any> {
     return this.http.delete(`${this.urlendpoint}/${id}`)
+    .toPromise()
+      .then(this.handleData)
+      .catch(this.handleError);
   }
 
   saveProductShoppingCart(product): Promise<any> {
@@ -35,7 +38,6 @@ export class ShoppingCartService {
 
   private handleError(error) {
     const errorMsg = `${error.status, error.statusText}`;
-    console.log('error shopping cart ' + error);
     return error;
   }
 

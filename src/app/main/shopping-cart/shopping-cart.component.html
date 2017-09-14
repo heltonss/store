@@ -1,8 +1,8 @@
 <ul class="collection col s12">
-    <li class="collection-item avatar">
-        <a class="btn-flat yellow right"><i class="material-icons left">remove_shopping_cart</i>retirar</a>
-        <img src="assets/products/samsung1.png" alt="" class="responsive-img circle">
-        <p>R$ 1000,00 </p>
-        <span class="title">Nome do produto</span>
+    <li *ngFor="let product of productsShoppingCart" class="collection-item avatar">
+        <a (click)="removeProduct(product._id)" class="btn-flat yellow right"><i class="material-icons left">remove_shopping_cart</i>retirar</a>
+        <img src="assets/products/{{ product.photos.image1 }}" alt="" class="responsive-img circle">
+        <p>{{ product.price }} </p>
+        <span class="title">{{ product.name }}</span>
     </li>
 </ul>

@@ -1,4 +1,6 @@
-import {Input, Component,  OnInit} from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
+import { ShoppingCartService } from '../shared/shopping-cart.service';
+import { Product } from '../shared/product';
 
 @Component({
   selector: 'app-cart-button',
@@ -7,19 +9,27 @@ import {Input, Component,  OnInit} from '@angular/core';
 })
 export class CartButtonComponent implements OnInit {
   @Input() countProduct: number;
+  private qtdShoppingCart;
+  public productsShoppingCart: Product[]
+  public totalProducts: number;
 
-  constructor() { }
+  constructor(private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
-   
+    this.getProductShoppingCart();
   }
-
-  ngOnChanges(){
   
+  ngOnChanges() {
+    this.getProductShoppingCart();
   }
-
-  updateCountCart(value: number){
-    this.countProduct = value;
+  
+  // updateCountCart(value: number) {
+  //   this.qtdShoppingCart = value;
+  // }
+  
+  getProductShoppingCart(): void {
+    this.shoppingCartService.getShoppingCart().subscribe( (res) => {
+    }) 
   }
 
 }
