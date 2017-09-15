@@ -1,0 +1,17 @@
+.product {
+    &-panel {
+        height: 9vh;
+        text-align: right;
+        &-title {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-right: 5%;
+        }
+        &-price {
+            font-size: 2rem;
+        }
+        &-main{
+            margin-bottom: 5px;
+        }
+    }
+}
