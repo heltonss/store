@@ -3,31 +3,57 @@
 header,
 main,
 footer {
-  padding-left: 300px;
+    padding-left: 300px;
 }
 
 .header {
-  &-search {
-    &-input {
-      padding: 0 0 0 5% !important;
+    &-search {
+        &-input {
+            padding: 0 0 0 5% !important;
+        }
     }
-  }
 }
 
 @media only screen and (max-width: 992px) {
-  header,
-  main,
-  footer {
-    padding-left: 0;
-  }
-  .header {
-    &-logotype {
-      margin-top: 0 !important;
+    header,
+    main,
+    footer {
+        padding-left: 0;
     }
-    &-search {
-      &-input {
-        padding: 0 0 0 10% !important;
-      }
+    .header {
+        &-logotype {
+            margin-top: 0 !important;
+        }
+        &-search {
+            &-input {
+                padding: 0 0 0 10% !important;
+            }
+        }
     }
-  }
+}
+
+@media only screen and (max-width: 640px) {
+    .product {
+        &-panel {
+            height: 10vh !important;
+            text-align: center !important;
+            &-title {
+                font-size: 1.6rem !important;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+//override materializecss
+.carousel {
+    height: 445px !important;
+}
+
+.carousel .indicators .indicator-item {
+    background-color: #43a047 !important;
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: yellow !important;
 }

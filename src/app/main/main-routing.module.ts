@@ -1,10 +1,11 @@
-import { ProductsComponent } from './../catalogue/products/products.component';
-import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { CatalogueComponent } from './../catalogue/catalogue.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MainComponent } from './main.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
@@ -13,10 +14,27 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: CatalogueComponent,
+        component: ProductsComponent
+      },
+      {
+        path: 'products/:id',
+        component: ProductsComponent
+      },
+      {
+        path: 'shopping-cart',
+        component: ShoppingCartComponent
+      },
+      {
+        path: 'product',
+        component: ProductComponent
       }
-    ]
+    ],
+  },
+  {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent
   }
+
 ]
 
 @NgModule({
@@ -25,6 +43,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [],
-  exports: [ RouterModule ]
+  exports: [RouterModule]
 })
 export class MainRoutingModule { }
